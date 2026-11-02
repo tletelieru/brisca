@@ -74,7 +74,7 @@ Listo cuando: el link de `ox-test` abre el cliente y CI pasa.
 
 ### 1. Motor
 - Naipe español de 40 cartas: 1–7, sota (10), caballo (11) y rey (12) de oros, copas, espadas y bastos.
-- Reparto de 3 cartas, triunfo dado vuelta al fondo del mazo, sacar carta después de cada basa partiendo por el ganador.
+- Reparto de 3 cartas, triunfo dado vuelta al fondo del mazo, sacar carta después de cada baza partiendo por el ganador.
 - Sin obligación de seguir pinta. Orden: As, 3, rey, caballo, sota, 7, 6, 5, 4, 2.
 - Puntaje: As 11, 3 10, rey 4, caballo 3, sota 2. Total 120; gana más de 60.
 - Parejas con 4 jugadores, sentados en cruz.
@@ -85,7 +85,7 @@ Listo cuando, con tests de propiedades sobre miles de partidas al azar:
 - Toda acción fuera de `legalActions` se rechaza.
 
 ### 2. Bots y simulador
-- Fácil: reglas simples (no botar puntos si se pierde la basa, cargar cuando gana el compañero).
+- Fácil: reglas simples (no botar puntos si se pierde la baza, cargar cuando gana el compañero).
 - Medio: Monte Carlo con manos rivales muestreadas, porque no hay obligación de seguir pinta.
 - Difícil: cuenta cartas jugadas y triunfos que quedan; en parejas coordina con el compañero.
 

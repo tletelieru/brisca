@@ -13,7 +13,7 @@ describe('App', () => {
     render(<App />)
     await userEvent.click(screen.getByRole('button', { name: /settings|ajustes/i }))
     await userEvent.click(screen.getByRole('button', { name: 'ES' }))
-    expect(screen.getByText("El juego de basas con triunfo y naipe español, contra bots.")).toBeTruthy()
+    expect(screen.getByText("El juego de bazas con triunfo y naipe español, contra bots.")).toBeTruthy()
     await userEvent.click(screen.getByRole('button', { name: 'EN' }))
     expect(screen.getByText("The Spanish-deck trick game with a trump suit, against bots.")).toBeTruthy()
   })

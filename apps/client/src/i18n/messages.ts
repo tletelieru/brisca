@@ -55,7 +55,7 @@ export const messages: Record<Locale, Messages> = {
   },
   es: {
     appName: "Brisca",
-    tagline: "El juego de basas con triunfo y naipe español, contra bots.",
+    tagline: "El juego de bazas con triunfo y naipe español, contra bots.",
     players: 'Jugadores',
     playerRange: '2–4',
     deck: 'Naipe',

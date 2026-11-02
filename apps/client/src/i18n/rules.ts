@@ -43,14 +43,14 @@ export const rulesText: Record<Locale, RulesText> = {
       {
         tab: "Base",
         rules: [
-          "Juego de basas con naipe español de 40 cartas: oros, copas, espadas y bastos.",
+          "Juego de bazas con naipe español de 40 cartas: oros, copas, espadas y bastos.",
           "2 o 3 jugadores, o 4 en parejas.",
-          "Cada jugador tiene 3 cartas. Después de cada basa todos sacan una, partiendo por el que ganó.",
+          "Cada jugador tiene 3 cartas. Después de cada baza todos sacan una, partiendo por el que ganó.",
           "La carta que se da vuelta después del reparto marca el triunfo de toda la partida.",
         ],
       },
       {
-        tab: "Basas",
+        tab: "Bazas",
         rules: [
           "Puedes jugar cualquier carta: no es obligatorio seguir la pinta.",
           "Un triunfo le gana a cualquier carta de otra pinta. Si no hay triunfo, gana la más alta de la pinta que salió.",
