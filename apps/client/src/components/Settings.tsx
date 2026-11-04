@@ -17,7 +17,13 @@ interface Props {
   onReduceMotion: (next: boolean) => void
   plainFont: boolean
   onPlainFont: (next: boolean) => void
+  musicOn: boolean
+  onMusic: (next: boolean) => void
+  sounds: boolean
+  onSounds: (next: boolean) => void
   onRules: () => void
+  otherGames: boolean
+  onOtherGames: (next: boolean) => void
   onClose: () => void
 }
 
@@ -39,7 +45,13 @@ export function Settings({
   onReduceMotion,
   plainFont,
   onPlainFont,
+  musicOn,
+  onMusic,
+  sounds,
+  onSounds,
   onRules,
+  otherGames,
+  onOtherGames,
   onClose,
 }: Props) {
   const t = useMessages()
@@ -95,36 +107,44 @@ export function Settings({
           ))}
         </div>
       </div>
-      <label className="flex items-center gap-3">
-        <input
-          type="checkbox"
-          checked={plainFont}
-          onChange={(event) => onPlainFont(event.target.checked)}
-          className="pixel-check"
-        />
-        <span className="min-w-0 flex-1">
-          <span className="block text-sm font-medium">{t.plainFont}</span>
-          <span className="block text-xs text-muted">{t.plainFontHint}</span>
-        </span>
-      </label>
-      <label className="flex items-center gap-3">
-        <input
-          type="checkbox"
-          checked={reduceMotion}
-          onChange={(event) => onReduceMotion(event.target.checked)}
-          className="pixel-check"
-        />
-        <span className="min-w-0 flex-1">
-          <span className="block text-sm font-medium">{t.reduceMotion}</span>
-          <span className="block text-xs text-muted">{t.reduceMotionHint}</span>
-        </span>
-      </label>
-      <button type="button" onClick={onRules} className="pixel-box bg-raised py-2 font-medium">
-        {t.rules}
-      </button>
-      <button type="button" onClick={onClose} className="pixel-box bg-raised py-2 font-medium">
-        {t.close}
-      </button>
+      {[
+        { label: t.plainFont, hint: t.plainFontHint, checked: plainFont, onChange: onPlainFont },
+        { label: t.showOtherGames, hint: t.showOtherGamesHint, checked: otherGames, onChange: onOtherGames },
+        {
+          label: t.reduceMotion,
+          hint: t.reduceMotionHint,
+          checked: reduceMotion,
+          onChange: onReduceMotion,
+        },
+        { label: t.music, hint: t.musicHint, checked: musicOn, onChange: onMusic },
+        { label: t.sounds, hint: t.soundsHint, checked: sounds, onChange: onSounds },
+      ].map(({ label, hint, checked, onChange }) => (
+        <label key={label} className="flex items-center gap-3">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(event) => onChange(event.target.checked)}
+            className="pixel-check"
+          />
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-medium">{label}</span>
+            <span className="block text-xs text-muted">{hint}</span>
+          </span>
+        </label>
+      ))}
+      {[
+        { label: t.rules, onClick: onRules },
+        { label: t.close, onClick: onClose },
+      ].map(({ label, onClick }) => (
+        <button
+          key={label}
+          type="button"
+          onClick={onClick}
+          className="pixel-box bg-raised py-2 font-medium"
+        >
+          {label}
+        </button>
+      ))}
     </Overlay>
   )
 }
